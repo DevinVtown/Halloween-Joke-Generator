@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Franke's Halloween Joke Generator...</title>
+
+
+<!--START: The section below is for color and layout via cascading style sheet code -->
+<style>
+
+body
+{
+	background-color: orange;
+}
+
+#main
+{
+	width: 680px;
+	background-color: #283747;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	padding: 10px;
+	text-align: center;
+	
+	border: solid;
+	border-color: black;
+	border-radius: 24px 24px;
+}
+
+#mainImage
+{
+	width: 600px;
+	height: 400px;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	border: solid;
+	border-color: grey;
+	border-radius: 60px;
+	box-shadow: 6px 6px palegreen;
+}
+
+button
+{
+	width: 200px;
+	height: 50px;
+	
+	backgorund-color: black;
+	
+	color: blue;
+	font-family: chiller;
+	font-size: 20pt;
+	
+	border: dotted;
+	border-color: orange;
+	border-radius: 12px 0px;
+	box-shadow: 6px 6px black;
+}
+
+h1
+{
+	font-family: chiller;
+	color: #2E86C1;
+	text-shadow: 1px 1px #F4D03F;
+	font-size: 35pt;
+}
+
+h2
+{
+	font-family: stencil;
+	color: #2ECC71;
+}
+
+ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+li
+{
+	float: center;
+}
+
+li a
+{
+	display: block;
+	padding: 8px;
+	
+	border: solid;
+	border-color: black;
+	background-color: purple;
+	border-radius: 24px 24px 24px 24px;
+	
+	color: white;
+	text-decoration: none;
+	font-family: chiller;
+	font-size: 20pt;
+}
+
+li a:hover
+{
+	background-color: black;
+	border-color: orange;
+}
+</style>
+<!-- END: The section above is for color and layout via cascading style sheet code -->
+
+<!-- START: The section above is for interactivity and special effects via javascript code -->
+
+<script>
+	// global variables
+	var name   = "Default Name";
+	var number = 0;
+	
+	function tellJoke()
+	{
+		name = prompt( "Hi, Whats your name?" );
+		
+		var joke = "Default Joke Text";
+		var promptText = name + ", choose a number (1-5)";
+		
+		number = parseInt( prompt( promptText ) );
+		
+		
+		
+		if( number == 1 )
+		{
+			joke = "What do mummies like listening to on Halloween?";
+		}
+		else if( number == 2 )
+		{
+			joke = "Why do they put fences around graveyards?";
+		}
+		else if( number == 3 )
+		{
+			joke = "Why didn't the skeleton chicken cross the road?";
+		}
+		else if( number == 4 )
+		{
+			joke = "How are mosquitoes just like family?";
+		}
+		else if( number == 5 )
+		{
+			joke = "When does a ghost eat breakfas?";
+		}
+		else if( number % 2 == 0 ) // even test
+		{
+			joke = "What plants like Halloween the most?";
+		}
+		else
+		{
+			joke = "What’s worse than being a five-ton witch on Halloween?";
+		}
+		
+		document.getElementById( "question" ).innerHTML = joke;
+		
+	} // end function tellJoke()
+	
+	function getPunchline()
+		{	
+		var punchline = "Default Punchline Text";
+		
+		if( number == 1 )
+		{
+		punchline = "  -  Wrap music!";
+		document.getElementById( "mainImage" ).src = "images/mummy - joke1.png";
+		}
+		else if( number == 2 )
+		{
+		punchline = "  -  Because people are dying to get in!";
+		document.getElementById( "mainImage" ).src = "images/graveyard - joke2.png";
+		}
+		else if( number == 3 )
+		{
+		punchline = "  -  She lacked the guts for the adventure!";
+		document.getElementById( "mainImage" ).src = "images/chicken - joke3.jpg";
+		}
+		else if( number == 4 )
+		{
+		punchline = "  -  Both are very annoying and they carry your blood!";
+		document.getElementById( "mainImage" ).src = "images/mosquitoes - joke4.jpg";
+		}
+		else if( number == 5 )
+		{
+		punchline = "  -  In the moaning!";
+		document.getElementById( "mainImage" ).src = "images/ghost - joke5.png";
+		}
+		else if( number % 2 == 0 ) // even test
+		{
+			punchline = "  -  Bam-BOO!";
+		}
+		else
+		{
+			punchline = "  -  Being her broom!";
+		}
+
+		document.getElementById( "punchline" ).innerHTML = punchline;
+
+	} // end function getPunchline()
+
+</script>
+<!-- END: The section above is for cinteractivity and special effects via javascript code -->
+
+</head>
+
+<body>
+
+<div id="main">
+
+	<h1>Franke's Halloween Joke Generator...</h1>
+	
+	<button type="button" onclick="tellJoke()">Tell Me A Joke!</button>
+	
+	<h2 id="question">...</h2>
+	
+	<button type="button" onclick="getPunchline()">I Need the Punchline</button>
+	
+	<h2 id="punchline">...</h2>
+	
+	<p>
+	<img id="mainImage" src="images/mainHalloween.jpg" width="600px" height="350px"/>
+	</p>
+	
+	<ul>
+			<li><a target="_blank" href="https://boyslife.org/home/23079/funny-halloween-jokes/">Jokes...</a></li>
+			<li><a target="_blank" href="https://redtri.com/funny-bones-halloween-jokes-for-kids/">More Jokes...</a></li>
+			<li><a target="_blank" href="http://www.halloween.com/halloween-jokes-1.php">Even More Jokes...</a></li>
+	</ul>
+
+
+
+</div>
+
+</body>
+
+</html>
+
+
+
